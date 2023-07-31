@@ -1,0 +1,53 @@
+.searchBar {
+  margin: 10px 30px;
+  min-width: 200px;
+  padding: 10px 20px;
+
+}
+
+.searchBar * {
+  margin-bottom: 30px;
+
+}
+
+.buttons {
+  margin: 10px 0;
+}
+
+.buttons button {
+  padding: 5px 15px;
+  margin-right: 10px;
+}
+
+.buttons .searchBtn {
+  background-color: green;
+  color: white;
+}
+input {
+  padding: 10px 10px 10px 0;
+}
+input {
+  outline: 0;
+  border-width: 0 0 2px;
+  border-color: gray;
+}
+input:focus {
+  border-color: green;
+  outline: 1px dotted #000
+}
+
+.example-additional-selection {
+  opacity: 0.75;
+  font-size: 0.75em;
+}
+
+.example-radio-group {
+  display: flex;
+  flex-direction: column;
+  margin: 15px 0;
+  align-items: flex-start;
+}
+
+.example-radio-button {
+  margin: 5px;
+}

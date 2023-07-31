@@ -1,0 +1,33 @@
+<div class="content">
+  <ul class="meal-list">
+    <li *ngFor="let ship of filteredShowShips">
+      <div class="rowBox">
+        <div class="title">
+         <h2> {{ ship.name }}</h2>
+          <span>&#8594;</span>
+        </div>
+        <div>
+          <div class="rowContent">
+            <div class="colContent">
+              <h3>Тип</h3>
+              <p>{{ship.type}}</p>
+            </div>
+
+
+            <div class="colContent">
+              <h3>Порт</h3>
+              <p>{{ship.home_port}}</p>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="borderBox"></div>
+      </div>
+    </li>
+  </ul>
+
+  <div class="has-text-centered">'
+    <app-pagination [totalRecords]="filteredShips.length" [recordsPerPage]="itemsPerPage" (onPageChange)="onPageChange($event)"></app-pagination>
+  </div>
+</div>
