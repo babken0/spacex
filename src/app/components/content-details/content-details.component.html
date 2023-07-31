@@ -1,0 +1,25 @@
+<div class="content-details" *ngIf="ship$ | async as ship">
+  <span><a [routerLink]="['../../']">Back</a></span>
+  <h1>{{ship.name}}</h1>
+  <div  class="shipInfo">
+    <div>
+      <p>Тип    <span>{{ ship.type }}</span></p>
+      <p>Вес    <span>{{ ship.weight_kg }}</span></p>
+    </div>
+    <div>
+      <p>Порт   <span>{{ ship.home_port }}</span></p>
+      <p>Год    <span>{{ ship.year_built }}</span></p>
+    </div>
+  </div>
+
+
+  <div>
+    <p>Миссии</p>
+
+    <p>{{ship.missions}}</p>
+  </div>
+
+</div>
+
+
+

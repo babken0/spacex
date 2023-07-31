@@ -1,0 +1,12 @@
+.content-details {
+  margin: 0 auto;
+  padding: 30px 20px;
+  background-color: #B4B3B3;
+  font-family: Arial, serif;
+  border-radius: 8px;
+}
+
+.shipInfo {
+  display: flex;
+  justify-content: space-around;
+}

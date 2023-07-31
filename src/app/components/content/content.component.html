@@ -3,8 +3,8 @@
     <li *ngFor="let ship of filteredShowShips">
       <div class="rowBox">
         <div class="title">
-         <h2> {{ ship.name }}</h2>
-          <span>&#8594;</span>
+          <h2> {{ ship.name }}</h2>
+          <a  [routerLink]="['/content', ship.id]">&#8594;</a>
         </div>
         <div>
           <div class="rowContent">
