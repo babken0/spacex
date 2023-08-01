@@ -18,9 +18,13 @@ export class ShipService {
     return this.ships$;
   }
 
-  public getShipsById(id: string): Observable<Ship> {
-    return this.apollo.watchQuery<Ship>({query: GET_SHIP_BY_ID, context: {"shipId": id}}).valueChanges
-      .pipe(map(({data}: any) => data.ships))
+  public getShipsById(id: string): Observable<Ship | undefined> {
+    return this.ships$
+      .pipe(
+        map(ships => {
+          return ships.find(ship => ship.id === id);
+        })
+      )
   }
 
   public getPorts(): Observable<string[]> {

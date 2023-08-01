@@ -5,6 +5,7 @@
         <div class="title">
           <h2> {{ ship.name }}</h2>
 <!--          <button (click)="navigate(ship.id)">&#8594;</button>-->
+          <!--  TODO Added click event to a link to navigate insteadof this (routerLink). and in method before navigate use this.stateService.setFilteredData(ships) to save state and use this state if data exist in ContentComponent onInit method -->
           <a [routerLink]="['/content',ship.id]">&#8594;</a>
         </div>
         <div>

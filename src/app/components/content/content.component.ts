@@ -4,6 +4,7 @@ import {ShipService} from "../../core/services/ship.service";
 import {Ship} from "../../core/models/ship.model";
 import { map} from "rxjs/operators";
 import {Router} from "@angular/router";
+import {StateService} from "../../core/services/state.service";
 
 
 @Component({
@@ -21,7 +22,7 @@ export class ContentComponent implements OnInit ,OnChanges{
   public itemsPerPage =  5;
   public  currentPage =  1;
 
-  constructor(private shipService: ShipService, private router:Router) {
+  constructor(private shipService: ShipService, private router:Router, private stateService: StateService) {
   }
 
   ngOnInit(): void {

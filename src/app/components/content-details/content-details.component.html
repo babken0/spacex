@@ -1,24 +1,34 @@
-<div class="content-details" *ngIf="ship$ | async as ship">
-<!--  <span><a [routerLink]="['../../']">Back</a></span>-->
+<div *ngIf="ship$ | async as ship">
+  <span><a [routerLink]="['../../']">Back</a></span>
   <h1>{{ship.name}}</h1>
-  <div  class="shipInfo">
-    <div>
-      <p>Тип    <span>{{ ship.type }}</span></p>
-      <p>Вес    <span>{{ ship.weight_kg }}</span></p>
+  <div class="shipInfo">
+    <div  class="shipParameterInfo">
+      <div class="infoSection">
+        <div class="info">
+          <p>Тип</p>
+          <p class="infoValue">{{ ship.type  ? ship.type : 'unknown' }}</p>
+        </div>
+        <div class="info">
+          <p>Вес</p>
+          <p class="infoValue">{{ ship.weight_kg ? ship.weight_kg : 'unknown' }}</p>
+        </div>
+      </div>
+      <div class="infoSection">
+        <div class="info">
+          <p>Порт</p>
+          <p class="infoValue">{{ ship.home_port ? ship.home_port : 'unknown' }}</p>
+        </div>
+        <div class="info">
+          <p>Год</p>
+          <p class="infoValue">{{ ship.year_built ? ship.year_built : 'unknown' }}</p>
+        </div>
+      </div>
     </div>
-    <div>
-      <p>Порт   <span>{{ ship.home_port }}</span></p>
-      <p>Год    <span>{{ ship.year_built }}</span></p>
+    <div class="mission">
+      <p>Миссии</p>
+      <p class="infoValue">{{ship.missions ? ship.missions : 'unknown'}}</p>
     </div>
   </div>
-
-
-  <div>
-    <p>Миссии</p>
-
-    <p>{{ship.missions}}</p>
-  </div>
-
 </div>
 
 

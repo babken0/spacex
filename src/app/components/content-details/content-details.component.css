@@ -7,6 +7,27 @@
 }
 
 .shipInfo {
+  width: 40%;
+}
+
+.shipParameterInfo {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+}
+
+.infoSection{
+  width: 30%
+}
+
+.info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.infoValue {
+  color: blue;
+}
+
+.mission {
+  margin-top: 30px;
 }

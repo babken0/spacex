@@ -4,8 +4,6 @@ import {NotFoundComponent} from "./components/not-found/not-found.component";
 
 
 const routes: Routes = [
-
-
   {path: '', pathMatch: 'full', redirectTo: 'content'},
   {
     path: 'content',

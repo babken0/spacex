@@ -12,7 +12,7 @@ import {Ship} from "../../core/models/ship.model";
 })
 export class ContentDetailsComponent implements OnInit {
 
-  public ship$!: Observable<Ship>;
+  public ship$!: Observable<Ship | undefined>;
 
   constructor(private route: ActivatedRoute,
               private router: Router,

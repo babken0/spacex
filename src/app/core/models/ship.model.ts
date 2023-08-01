@@ -7,7 +7,7 @@ export interface Ship{
   class: number
   course_deg: number
   home_port: string
-  id: number
+  id: string
   image: string
   imo: number
   missions: ShipMission[]
