@@ -4,7 +4,8 @@
       <div class="rowBox">
         <div class="title">
           <h2> {{ ship.name }}</h2>
-          <a  [routerLink]="['/content', ship.id]">&#8594;</a>
+<!--          <button (click)="navigate(ship.id)">&#8594;</button>-->
+          <a [routerLink]="['/content',ship.id]">&#8594;</a>
         </div>
         <div>
           <div class="rowContent">

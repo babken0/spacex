@@ -3,6 +3,7 @@ import {SearchModel} from "../../core/models/search.model";
 import {ShipService} from "../../core/services/ship.service";
 import {Ship} from "../../core/models/ship.model";
 import { map} from "rxjs/operators";
+import {Router} from "@angular/router";
 
 
 @Component({
@@ -20,7 +21,7 @@ export class ContentComponent implements OnInit ,OnChanges{
   public itemsPerPage =  5;
   public  currentPage =  1;
 
-  constructor(private shipService: ShipService) {
+  constructor(private shipService: ShipService, private router:Router) {
   }
 
   ngOnInit(): void {
@@ -65,4 +66,8 @@ return []
     let startIndex = this.currentPage <= 1 ? 0 : (this.currentPage - 1) * this.itemsPerPage;
     this.filteredShowShips =  this.filteredShips.slice(startIndex, startIndex + this.itemsPerPage);
   }
+  //
+  // navigate(id : number) {
+  //   this.router.navigate([`/${id}`]).then(r => r) ;
+  // }
 }

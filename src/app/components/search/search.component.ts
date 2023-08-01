@@ -4,8 +4,6 @@ import {FormBuilder, FormControl, FormGroup} from "@angular/forms";
 import {SearchModel} from "../../core/models/search.model";
 import {Observable} from "rxjs";
 import {ShipService} from "../../core/services/ship.service";
-import {MatRadioChange} from "@angular/material/radio";
-import {MatSelectChange} from "@angular/material/select";
 
 @Component({
   selector: 'app-search',

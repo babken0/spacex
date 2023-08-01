@@ -1,15 +1,15 @@
 import {NgModule} from '@angular/core';
-import {PreloadAllModules, RouterModule, Routes} from "@angular/router";
-import {AppComponent} from "./app.component";
+import {RouterModule, Routes} from "@angular/router";
 import {NotFoundComponent} from "./components/not-found/not-found.component";
 
 
 const routes: Routes = [
+
+
+  {path: '', pathMatch: 'full', redirectTo: 'content'},
   {
-    path: '', component: AppComponent,
-    children: [
-      {path: 'content', component: AppComponent}
-    ]
+    path: 'content',
+    loadChildren: () => import('./components/ship-list/ship-list.module').then(m => m.ShipListModule)
   },
   {
     path: 'content/:id',
@@ -19,9 +19,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, {
-    preloadingStrategy: PreloadAllModules
-  })],
+  imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
 export class AppRoutingModule {
