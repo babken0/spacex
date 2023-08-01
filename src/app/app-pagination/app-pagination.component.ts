@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnChanges, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnChanges, Output} from '@angular/core';
 
 
 @Component({
@@ -25,7 +25,7 @@ export class AppPaginationComponent implements OnChanges {
     this.activePage = 1;
   }
 
-  private  getPageCount(): number {
+  private getPageCount(): number {
     let totalPage = 0;
     if (this.totalRecords > 0 && this.recordsPerPage > 0) {
       const pageCount = this.totalRecords / this.recordsPerPage;
@@ -36,9 +36,9 @@ export class AppPaginationComponent implements OnChanges {
   }
 
   private static getArrayOfPage(pageCount: number): number [] {
-    const pageArray:number[] = [];
+    const pageArray: number[] = [];
     if (pageCount > 0) {
-      for(let i = 1 ; i <= pageCount; i++) {
+      for (let i = 1; i <= pageCount; i++) {
         pageArray.push(i);
       }
     }

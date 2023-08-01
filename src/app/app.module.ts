@@ -12,10 +12,12 @@ import {MatSelectModule} from "@angular/material/select";
 import {MatRadioModule} from "@angular/material/radio";
 import {CoreModule} from "./core/core.module";
 import {AppRoutingModule} from "./app-routing.module";
+import {NotFoundComponent} from "./components/not-found/not-found.component";
 
 @NgModule({
   declarations: [
     AppComponent,
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule,

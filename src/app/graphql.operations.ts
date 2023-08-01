@@ -15,14 +15,7 @@ const GET_SHIPS = gql`
     }
   }
 `
-const GET_SHIP_BY_ID = gql`
-  query{
-      ship(id: $shipId) {
-        id
-      }
-  }
-`
 
 export  {
-  GET_SHIPS,GET_SHIP_BY_ID
+  GET_SHIPS
 }

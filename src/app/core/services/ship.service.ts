@@ -1,7 +1,7 @@
 import {Injectable} from "@angular/core";
 import {Observable} from "rxjs";
 import {Apollo} from "apollo-angular";
-import {GET_SHIP_BY_ID, GET_SHIPS} from "../../graphql.operations";
+import {GET_SHIPS} from "../../graphql.operations";
 import {Ship} from "../models/ship.model";
 import {map, shareReplay} from "rxjs/operators";
 

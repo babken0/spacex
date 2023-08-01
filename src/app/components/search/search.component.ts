@@ -4,6 +4,7 @@ import {FormBuilder, FormControl, FormGroup} from "@angular/forms";
 import {SearchModel} from "../../core/models/search.model";
 import {Observable} from "rxjs";
 import {ShipService} from "../../core/services/ship.service";
+import {StateService} from "../../core/services/state.service";
 
 @Component({
   selector: 'app-search',
@@ -18,35 +19,38 @@ export class SearchComponent implements OnInit {
   public ports = new FormControl([]);
 
   constructor(private shipService: ShipService,
-              private formBuilder: FormBuilder) {
+              private formBuilder: FormBuilder,
+              private stateService: StateService) {
     this.formGroup = this.formBuilder.group({
       "name": new FormControl(""),
       "ports": new FormControl([]),
+      "type": new FormControl(""),
     });
   }
 
   ngOnInit(): void {
     this.ports$ = this.shipService.getPorts();
     this.types$ = this.shipService.getTypes();
+    this.initValues();
   }
 
-  // public portSelected(ports: MatSelectChange) {
-  //     this.filter.emit(ports.value)
-  // }
-
-  public onSearch(event?: any) {
-    this.filter.emit(this.createFilterModel(event?.value));
+  public onSearch() {
+    this.filter.emit(this.createFilterModel());
   }
 
-  // public onFilter(type: MatRadioChange) {
-  //   this.filter.emit(this.createFilterModel(type.value));
-  // }
-
-  public createFilterModel(type?: string): SearchModel {
+  public createFilterModel(): SearchModel {
     return {
       name: this.formGroup.controls["name"]?.value,
       ports: this.formGroup.controls["ports"]?.value,
-      type: type || '',
+      type: this.formGroup.controls["type"]?.value,
     }
+  }
+
+  private initValues() {
+    const searchData = this.stateService.getFilteredData();
+    this.formGroup.controls["name"].setValue(searchData.name);
+    this.formGroup.controls["ports"].setValue(searchData.ports);
+    this.formGroup.controls["type"].setValue(searchData.type);
+    this.onSearch();
   }
 }

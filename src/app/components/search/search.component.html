@@ -4,23 +4,12 @@
     <div class="name">
       <input class="inputText" type="text" id="name" formControlName="name" placeholder="Название" (keyup)="onSearch()">
     </div>
-<!--    <div class="ports">-->
-<!--      <select name="port" multiple id="port" formControlName="port" (change)= "onSearch()">-->
-<!--        <option [value]="port" *ngFor="let port of ports$ | async">{{port}}</option>-->
-<!--      </select>-->
-<!--    </div>-->
 
     <ng-container *ngIf="ports$ | async as portsData">
       <div>
         <mat-form-field>
           <mat-label>Порт</mat-label>
           <mat-select formControlName="ports" (selectionChange)="onSearch()" multiple>
-<!--                      <mat-select-trigger>-->
-<!--            &lt;!&ndash;            {{ports?.[0] ? 'Вибран 1' : ''}}&ndash;&gt;-->
-<!--                        <span *ngIf="ports.get('SelectControl').value?.length > 0" class="example-additional-selection">-->
-<!--                    {{ports.get('SelectControl').value?.length === 1 ? 'Вибран' : 'Вибраны'}} {{(ports.value?.length || 0) - 1}}-->
-<!--                  </span>-->
-<!--                      </mat-select-trigger>-->
             <mat-option *ngFor="let port of portsData" [value]="port">{{port}}</mat-option>
           </mat-select>
         </mat-form-field>
@@ -31,10 +20,10 @@
 
     <div class="types">
       <label id="example-radio-group-label">Тип</label>
-      <mat-radio-group
-        aria-labelledby="example-radio-group-label"
-        class="example-radio-group"
-        (change)="onSearch($event)">
+      <mat-radio-group formControlName="type"
+                       aria-labelledby="example-radio-group-label"
+                       class="example-radio-group"
+                       (change)="onSearch()">
         <mat-radio-button class="example-radio-button" *ngFor="let type of types$ | async" [value]="type">
           {{type}}
         </mat-radio-button>

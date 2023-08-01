@@ -50,3 +50,14 @@
   color: blue;
   margin: 0;
 }
+
+.title a {
+  font-size: 32px;
+  color: darkblue;
+}
+
+.title a:hover {
+  cursor: pointer ;
+}
+
+

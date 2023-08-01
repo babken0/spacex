@@ -1,17 +1,21 @@
-import { Injectable } from '@angular/core';
-import {Ship} from "../models/ship.model";
+import {Injectable} from '@angular/core';
+import {SearchModel} from "../models/search.model";
 
 @Injectable({
   providedIn: 'root'
 })
 export class StateService {
-  private filteredData: Ship[] = [];
+  private filterData: SearchModel = {
+    name: '',
+    ports: [],
+    type: ''
+  };
 
-  setFilteredData(ships: Ship[]) {
-    this.filteredData = ships;
+  setFilterData(searchModel: SearchModel) {
+    this.filterData = searchModel;
   }
 
-  getFilteredData(): Ship[] {
-    return this.filteredData;
+  getFilteredData(): SearchModel {
+    return this.filterData;
   }
 }
